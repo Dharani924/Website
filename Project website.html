@@ -1,0 +1,424 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tourist Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            background-image:url("Bacground\ image.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 80px;
+            position: relative;
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); 
+            z-index: -1;
+        }
+         .navbar {
+            background: rgba(0, 0, 0, 0.8); 
+        }
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            color:white;
+        }
+        .navbar-nav .nav-link {
+            color: white;
+        }
+        .navbar-toggler {
+            border: none;
+        }
+        #contact p strong {
+    color: black; 
+}
+        .hero {
+            height: 100vh;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    .hero h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        .destination img {
+            height: 250px;
+            border-radius: 10px;
+            width: 100%;
+        }
+        
+       
+        .destination img:hover {
+            transform: scale(1.05);
+        }
+ .card img {
+    width: 100%; 
+    height: 250px;
+    object-fit: cover; 
+    border-radius: 10px; 
+}
+
+
+.card img:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+}
+.loyalty img {
+    width: 100%;
+    max-width: 370px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+
+ .services i {
+            margin-bottom: 10px;
+            color: #ff6f61;
+            symbols:black ;
+        }
+        .contact-section {
+            background:lightslategray;
+            padding: 50px 20px;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: auto;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+        .contact-form button {
+            background: hsl(5, 100%, 69%);
+            border: none;
+            padding: 10px 20px;
+            color:white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .contact-form button:hover {
+            background: hsl(5, 100%, 59%);
+        }
+        #contact h2 {
+    color:white; 
+}
+#contact p strong {
+    color:white; 
+}
+        .map-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .iframe {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+        }
+        .footer {
+        background: #222;
+        color: white;
+        padding: 30px 0;
+        text-align: center;
+    }
+    .footer h5 {
+        color: hsl(5, 100%, 69%);
+        margin-bottom: 15px;
+    }
+    .footer a {
+        color: white;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    .footer a:hover {
+        color: hsl(5, 100%, 69%);
+    }
+    .social-icons a {
+        margin: 0 10px;
+        color: white;
+        font-size: 20px;
+        transition: 0.3s;
+    }
+        .social-icons a:hover {
+            color:lightcoral;
+        }
+        @media (max-width: 768px) {
+            .navbar-nav {
+                text-align: center;
+                
+            }
+            @media (max-width: 768px) {
+    .loyalty img {
+        width: 100%;
+        height: auto; /* Let height adjust on smaller screens */
+        object-fit: contain; /* Avoid cropping on very small screens */
+    }
+}
+
+}
+</style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">TravelX</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav"></div>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#destinations">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li> 
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+     
+<section id="home" class="hero">
+    <div class="container">
+        <h1>Explore the World with TravelX</h1>
+        <p>Your perfect vacation awaits</p>
+       <a href="#destinations" class="btn btn-primary">Discover More</a>
+    </div>
+</section>
+<section id="destinations" class="container py-5">
+    <h2 class="text-center mb-4">Popular Destinations</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="destination">
+                <img src="Paris.jpeg" class="img-fluid">
+               <h4 class="mt-2">Paris, France</h4>
+               <p>Experience the romance of the Eiffel Tower and the charm of Parisian streets.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="destination">
+                <img src="Bali.jpeg" class="img-fluid">
+                <h4 class="mt-2">Bali, Indonesia</h4>
+                <p>Enjoy breathtaking beaches, cultural temples, and lush landscapes.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="destination">
+                <img src="Maldivies - Copy.jpeg" class="img-fluid">
+                <h4 class="mt-2">Maldives</h4>
+                <p>Relax in overwater bungalows and admire crystal-clear waters.</p>
+
+            </div>
+        </div>
+    </div>
+</section>
+<section id="attractions" class="container py-5">
+    <h2 class="text-center mb-4">Top Attractions</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">  
+        <div class="col">
+            <div class="card">
+                <img src="eiffel tower1 - Copy.jpg" class="card-img-top" alt="Eiffel Tower">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Eiffel Tower</h5>
+                    <p class="card-text">A must-visit landmark in Paris, France.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="great wall of china.jpg" class="card-img-top" alt="Great Wall">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Great Wall of China</h5>
+                    <p class="card-text">One of the wonders of the world, stretching across China.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="pyramid.jpg" class="card-img-top" alt="Pyramids">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Pyramids of Egypt</h5>
+                    <p class="card-text">Ancient Egyptian pyramids and an iconic world heritage site.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="services" class="service text-center py-5"> 
+    <div class="container">
+        <h2 class="mb-4">Our Services</h2> 
+        <p class="mb-5">We offer a range of services to make your travel experience seamless and memorable.</p> 
+
+        <div class="row">
+            <div class="col-md-4 mb-4"> 
+                <i class="fas fa-plane fa-3x mb-3"></i> 
+                <h4>Flight Booking</h4>
+                <p>Book flights at the best prices with our exclusive airline deals. We ensure hassle-free ticket reservations for domestic and international destinations.</p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <i class="fas fa-hotel fa-3x mb-3"></i>
+                <h4>Hotel Reservations</h4>
+                <p>Choose from a wide selection of luxury, budget, and boutique hotels. We provide top-rated accommodations tailored to your needs.</p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <i class="fas fa-map fa-3x mb-3"></i>
+                <h4>Custom Tours</h4>
+                <p>Enjoy personalized tour packages with expert guides. Whether it's an adventure trip or a relaxing getaway, we have the perfect plan for you.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <i class="fas fa-car fa-3x mb-3"></i>
+                <h4>Car Rentals</h4>
+                <p>Travel comfortably with our affordable car rental services. Choose from a variety of vehicles for your convenience.</p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <i class="fas fa-passport fa-3x mb-3"></i>
+                <h4>Visa Assistance</h4>
+                <p>Need help with your visa application? Our experts provide step-by-step guidance to ensure a smooth approval process.</p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <i class="fas fa-users fa-3x mb-3"></i>
+                <h4>24/7 Support</h4>
+                <p>Our dedicated support team is available round the clock to assist you with any travel-related queries.</p>
+            </div>
+        </div>
+    </div>
+</setion>
+<section id="loyalty" class="loyalty text-center py-5" style="background: #f8f9fa;">
+    <div class="container">
+        <h2 class="mb-4 text-primary">✨ Exclusive Rewards for Regular Travelers ✨</h2> 
+        <p class="mb-4">Book more, explore more! Enjoy special offers, free upgrades, and exclusive perks.</p>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+                    <img src="discount 2.jpg" class="card-img-top" alt="Discount Offers">
+                    <div class="card-body">
+                        <h4 class="card-title">Discount Offers</h4>
+                        <p class="card-text">Get up to <b>15% OFF</b> on your next trip after 3 bookings!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+                    <img src="Vip  Access.jpg" class="card-img-top" alt="VIP Access">
+                    <div class="card-body">
+                        <h4 class="card-title">VIP Lounge Access</h4>
+                        <p class="card-text">Enjoy <b>free VIP lounge access</b> at airports for frequent bookers.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+                    <img src="free tour.jpg" class="card-img-top" alt="Free Guided Tours">
+                    <div class="card-body">
+                        <h4 class="card-title">Free Guided Tours</h4>
+                        <p class="card-text">Unlock <b>exclusive guided tours</b> in top destinations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="#contact" class="btn btn-success mt-4">Join the Loyalty Program</a>
+    </div>
+</section>
+<section id="contact" class="contact-section text-center">
+    <div class="container">
+        <h2 class="mb-4">Contact Us</h2>
+        <div class="row">
+            <div class="col-md-6 text-start">
+                <p><strong>Email:</strong> support@travelx.com</p>
+                <p><strong>Phone:</strong> +123 456 789</p>
+                <p><strong>Address:</strong> 123 Travel Street, NY</p>
+            </div>
+            <div class="col-md-6">
+                <form id="contactForm" class="contact-form" onsubmit="validateForm(event)">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <textarea id="message" placeholder="Your Message" rows="4" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
+
+        <div class="map-container">
+            <h4>Our Location</h4>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.7331070897786!2d-73.98513052406998!3d40.7488174714759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259af18ab3d3b%3A0x4216b3d24ef7d6e0!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1649478338543!5m2!1sen!2sus" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>About TravelX</h5>
+                <p>Your trusted partner in travel. Explore the world with ease and comfort.</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#destinations">Destinations</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Follow Us</h5>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="text-center">&copy; 2025 TravelX. All Rights Reserved.</p>
+    </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
+
+<script>
+    function validateForm(event) {
+        event.preventDefault();
+
+        let name = document.getElementById("name").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let message = document.getElementById("message").value.trim();
+
+        if (name === "" || email === "" || message === "") {
+            alert("Please fill out all fields before submitting.");
+        } else {
+            alert("Thank you! Your message has been sent successfully.");
+            document.getElementById("contactForm").reset();
+        }
+    }
+</script>
+</body>
+</html>
